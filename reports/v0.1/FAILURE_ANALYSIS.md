@@ -8,7 +8,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
 [
   {
     "method": "bm25",
-    "ndcg_at_5": 0.5307212739772434,
+    "ndcg_at_5": 0.530721273977,
     "query_id": "dvp-canonical-query",
     "ranking": [
       "dvp-distractor",
@@ -60,7 +60,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
       "temporal-kg-example",
       "temporal-kg-paraphrase"
     ],
-    "recall_at_5": 0.6666666666666666,
+    "recall_at_5": 0.666666666667,
     "reciprocal_rank": 0.5,
     "relevant_document_ids": [
       "dvp-core",
@@ -72,7 +72,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
   },
   {
     "method": "lsa",
-    "ndcg_at_5": 0.5307212739772434,
+    "ndcg_at_5": 0.530721273977,
     "query_id": "dvp-canonical-query",
     "ranking": [
       "dvp-distractor",
@@ -124,7 +124,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
       "bond-yield-core",
       "bond-duration-core"
     ],
-    "recall_at_5": 0.6666666666666666,
+    "recall_at_5": 0.666666666667,
     "reciprocal_rank": 0.5,
     "relevant_document_ids": [
       "dvp-core",
@@ -136,7 +136,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
   },
   {
     "method": "rrf-hybrid",
-    "ndcg_at_5": 0.5307212739772434,
+    "ndcg_at_5": 0.530721273977,
     "query_id": "dvp-canonical-query",
     "ranking": [
       "dvp-distractor",
@@ -188,7 +188,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
       "rank-fusion-core",
       "temporal-kg-core"
     ],
-    "recall_at_5": 0.6666666666666666,
+    "recall_at_5": 0.666666666667,
     "reciprocal_rank": 0.5,
     "relevant_document_ids": [
       "dvp-core",
@@ -200,7 +200,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
   },
   {
     "method": "feature-reranker",
-    "ndcg_at_5": 0.5307212739772434,
+    "ndcg_at_5": 0.530721273977,
     "query_id": "dvp-canonical-query",
     "ranking": [
       "dvp-distractor",
@@ -252,7 +252,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
       "bond-yield-core",
       "bond-duration-core"
     ],
-    "recall_at_5": 0.6666666666666666,
+    "recall_at_5": 0.666666666667,
     "reciprocal_rank": 0.5,
     "relevant_document_ids": [
       "dvp-core",
@@ -264,7 +264,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
   },
   {
     "method": "bm25",
-    "ndcg_at_5": 0.5307212739772434,
+    "ndcg_at_5": 0.530721273977,
     "query_id": "citation-grounding-canonical-query",
     "ranking": [
       "citation-grounding-distractor",
@@ -316,7 +316,7 @@ Failures below are synthetic record-level examples. They support debugging, not 
       "temporal-kg-example",
       "temporal-kg-paraphrase"
     ],
-    "recall_at_5": 0.6666666666666666,
+    "recall_at_5": 0.666666666667,
     "reciprocal_rank": 0.5,
     "relevant_document_ids": [
       "citation-grounding-core",
@@ -336,47 +336,47 @@ Failures below are synthetic record-level examples. They support debugging, not 
   {
     "example_id": "calibration-example-206",
     "label": 1,
-    "platt_probability": 0.23775434303835638,
-    "raw_probability": 0.06382976270798991,
+    "platt_probability": 0.237754343038,
+    "raw_probability": 0.063829762708,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.2790847054675775
+    "temperature_probability": 0.279084705468
   },
   {
     "example_id": "calibration-example-208",
     "label": 1,
-    "platt_probability": 0.2164689753650831,
-    "raw_probability": 0.046003946858999174,
+    "platt_probability": 0.216468975365,
+    "raw_probability": 0.046003946859,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.2551372944463971
+    "temperature_probability": 0.255137294446
   },
   {
     "example_id": "calibration-example-210",
     "label": 0,
-    "platt_probability": 0.7050800246896244,
-    "raw_probability": 0.9580406865130598,
+    "platt_probability": 0.70508002469,
+    "raw_probability": 0.958040686513,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.751272916290764
+    "temperature_probability": 0.751272916291
   },
   {
     "example_id": "calibration-example-213",
     "label": 1,
-    "platt_probability": 0.31403688621717024,
-    "raw_probability": 0.16935274110887844,
+    "platt_probability": 0.314036886217,
+    "raw_probability": 0.169352741109,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.36309898998694995
+    "temperature_probability": 0.363098989987
   },
   {
     "example_id": "calibration-example-215",
     "label": 0,
-    "platt_probability": 0.7132873791382182,
-    "raw_probability": 0.9623770915238605,
+    "platt_probability": 0.713287379138,
+    "raw_probability": 0.962377091524,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.7586984374086639
+    "temperature_probability": 0.758698437409
   }
 ]
 ```

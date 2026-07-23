@@ -6,7 +6,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-from paper_reproduction_lab.io import write_json
+from paper_reproduction_lab.io import stable_numbers, write_json
 from paper_reproduction_lab.models import StudyId, TrialResult
 from paper_reproduction_lab.runner import run_studies
 from paper_reproduction_lab.validation import audit_repository, load_manifests
@@ -30,6 +30,10 @@ def _write_markdown(path: Path, title: str, sections: list[str]) -> None:
         f"# {title}\n\n" + "\n\n".join(section.rstrip() for section in sections) + "\n",
         encoding="utf-8",
     )
+
+
+def _pretty_json(value: object) -> str:
+    return json.dumps(stable_numbers(value), indent=2, sort_keys=True)
 
 
 def _method_table(results: list[TrialResult], metrics: list[str]) -> str:
@@ -166,7 +170,7 @@ def generate_reports(
                 ["recall-at-5", "mrr", "ndcg-at-5"],
             ),
             "## Query-level comparisons against BM25\n\n```json\n"
-            + json.dumps(comparisons, indent=2, sort_keys=True)
+            + _pretty_json(comparisons)
             + "\n```",
             (
                 "## Interpretation\n\nThese are local method-behavior observations. "
@@ -286,13 +290,13 @@ def generate_reports(
                 "debugging, not estimates of real-world prevalence."
             ),
             "## Retrieval misses or lower first-relevant ranks\n\n```json\n"
-            + json.dumps(retrieval_failures, indent=2, sort_keys=True)
+            + _pretty_json(retrieval_failures)
             + "\n```",
             "## High-confidence raw calibration errors\n\n```json\n"
-            + json.dumps(calibration_failures, indent=2, sort_keys=True)
+            + _pretty_json(calibration_failures)
             + "\n```",
             "## Unsafe heuristic proposals\n\n```json\n"
-            + json.dumps(workflow_failures, indent=2, sort_keys=True)
+            + _pretty_json(workflow_failures)
             + "\n```",
         ],
     )
