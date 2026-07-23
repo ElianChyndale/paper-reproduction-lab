@@ -44,9 +44,9 @@
 - [x] Public and packaged Draft 2020-12 schemas match.
 - [x] Clean wheel installation loads all packaged schemas.
 - [x] Pytest, Ruff, and strict mypy pass.
-- [ ] CI passes on Ubuntu/Windows with Python 3.11/3.12.
-- [ ] Public repository and `v0.1.0` tag point to the final CI-validated commit.
-- [ ] The portfolio task log records commands, CI, URL, and remaining risks.
+- [x] CI passes on Ubuntu/Windows with Python 3.11/3.12.
+- [x] Public repository and `v0.1.0` tag point to the final CI-validated commit.
+- [x] The portfolio task log records commands, CI, URL, and remaining risks.
 
 ## Release commands
 
