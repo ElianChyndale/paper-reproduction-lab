@@ -1,0 +1,185 @@
+{
+  "$defs": {
+    "EvidenceLabel": {
+      "enum": [
+        "method-behavior-reproduction",
+        "scoped-claim-check",
+        "not-reproduced",
+        "methodological-reference"
+      ],
+      "title": "EvidenceLabel",
+      "type": "string"
+    },
+    "PaperReference": {
+      "additionalProperties": false,
+      "properties": {
+        "authors": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Authors",
+          "type": "array"
+        },
+        "claim_summary": {
+          "minLength": 1,
+          "title": "Claim Summary",
+          "type": "string"
+        },
+        "reference_id": {
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "title": "Reference Id",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "format": "uri",
+          "maxLength": 2083,
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "year": {
+          "maximum": 2100,
+          "minimum": 1900,
+          "title": "Year",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "reference_id",
+        "title",
+        "authors",
+        "year",
+        "url",
+        "claim_summary"
+      ],
+      "title": "PaperReference",
+      "type": "object"
+    },
+    "StudyId": {
+      "enum": [
+        "retrieval",
+        "calibration",
+        "workflow-agent"
+      ],
+      "title": "StudyId",
+      "type": "string"
+    }
+  },
+  "$id": "https://elianchyndale.github.io/paper-reproduction-lab/study-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "dataset_id": {
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "title": "Dataset Id",
+      "type": "string"
+    },
+    "evidence_labels": {
+      "items": {
+        "$ref": "#/$defs/EvidenceLabel"
+      },
+      "minItems": 1,
+      "title": "Evidence Labels",
+      "type": "array"
+    },
+    "local_hypothesis": {
+      "minLength": 1,
+      "title": "Local Hypothesis",
+      "type": "string"
+    },
+    "methods": {
+      "items": {
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "minItems": 2,
+      "title": "Methods",
+      "type": "array"
+    },
+    "metrics": {
+      "items": {
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Metrics",
+      "type": "array"
+    },
+    "not_reproduced": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Not Reproduced",
+      "type": "array"
+    },
+    "references": {
+      "items": {
+        "$ref": "#/$defs/PaperReference"
+      },
+      "minItems": 1,
+      "title": "References",
+      "type": "array"
+    },
+    "reproduced_mechanics": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Reproduced Mechanics",
+      "type": "array"
+    },
+    "rerun_command": {
+      "minLength": 1,
+      "title": "Rerun Command",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "default": "0.1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "seed": {
+      "const": 42,
+      "default": 42,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "study_id": {
+      "$ref": "#/$defs/StudyId"
+    },
+    "synthetic": {
+      "const": true,
+      "title": "Synthetic",
+      "type": "boolean"
+    },
+    "title": {
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "study_id",
+    "title",
+    "evidence_labels",
+    "references",
+    "local_hypothesis",
+    "reproduced_mechanics",
+    "not_reproduced",
+    "dataset_id",
+    "methods",
+    "metrics",
+    "rerun_command",
+    "synthetic"
+  ],
+  "title": "StudyManifest",
+  "type": "object"
+}

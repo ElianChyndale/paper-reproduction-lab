@@ -1,0 +1,79 @@
+{
+  "$defs": {
+    "StudyId": {
+      "enum": [
+        "retrieval",
+        "calibration",
+        "workflow-agent"
+      ],
+      "title": "StudyId",
+      "type": "string"
+    }
+  },
+  "$id": "https://elianchyndale.github.io/paper-reproduction-lab/run-manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "config_hashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "minProperties": 1,
+      "title": "Config Hashes",
+      "type": "object"
+    },
+    "dataset_hashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "minProperties": 1,
+      "title": "Dataset Hashes",
+      "type": "object"
+    },
+    "release_claim": {
+      "const": "synthetic-scoped-observations-not-original-paper-results",
+      "default": "synthetic-scoped-observations-not-original-paper-results",
+      "title": "Release Claim",
+      "type": "string"
+    },
+    "result_count": {
+      "minimum": 1,
+      "title": "Result Count",
+      "type": "integer"
+    },
+    "run_id": {
+      "const": "v0-1-seed-42",
+      "default": "v0-1-seed-42",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "default": "0.1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "seed": {
+      "const": 42,
+      "default": 42,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "studies": {
+      "items": {
+        "$ref": "#/$defs/StudyId"
+      },
+      "minItems": 1,
+      "title": "Studies",
+      "type": "array"
+    }
+  },
+  "required": [
+    "studies",
+    "result_count",
+    "dataset_hashes",
+    "config_hashes"
+  ],
+  "title": "RunManifest",
+  "type": "object"
+}

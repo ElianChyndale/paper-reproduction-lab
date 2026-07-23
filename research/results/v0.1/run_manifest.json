@@ -1,0 +1,23 @@
+{
+  "config_hashes": {
+    "calibration": "2f58336edfcabeb4cca5b91887dcd49260e39f737ddaf1a4b8d154564fd11e10",
+    "retrieval": "93d1c36a0db276dedcfe2b38a6ddcb7cf1f1e2fe77f19c0e14e6760d95b0effe",
+    "workflow-agent": "e823c5dedeab18e9cd3bb86a01150f586c95c979515fa3e447938462465b0ad7"
+  },
+  "dataset_hashes": {
+    "calibration-examples": "ffe628328835bb3c4838d7a89ad275896596ee42d23dd5448fba397acb016139",
+    "retrieval-documents": "d64670ca7155e1582a6e73532c78cdc48f4a4965ed294f4d83d2ba79c63009ba",
+    "retrieval-queries": "8cf5ed604879c3b777e30da061b6e177a0a8e5f0b16f3ba582f2ebc0aae2a890",
+    "workflow-agent-tasks": "d51b0d5a7f8368a706ac73d4baaee684de517cf96192ee6a419abd472af0d92b"
+  },
+  "release_claim": "synthetic-scoped-observations-not-original-paper-results",
+  "result_count": 10,
+  "run_id": "v0-1-seed-42",
+  "schema_version": "0.1.0",
+  "seed": 42,
+  "studies": [
+    "retrieval",
+    "calibration",
+    "workflow-agent"
+  ]
+}

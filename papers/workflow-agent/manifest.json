@@ -1,0 +1,61 @@
+{
+  "dataset_id": "synthetic-workflow-agent-v0-1",
+  "evidence_labels": [
+    "scoped-claim-check",
+    "not-reproduced",
+    "methodological-reference"
+  ],
+  "local_hypothesis": "On fixed synthetic routing tasks, an allowlisted proposer/verifier proxy records fewer unsafe selections than an unconstrained heuristic proxy without using an API.",
+  "methods": [
+    "deterministic-workflow",
+    "heuristic-single-agent",
+    "constrained-multi-agent"
+  ],
+  "metrics": [
+    "task-accuracy",
+    "unsafe-action-rate",
+    "refusal-rate",
+    "mean-steps",
+    "api-cost-usd"
+  ],
+  "not_reproduced": [
+    "LLM inference or training",
+    "ReAct prompts, traces, environments, or reported results",
+    "AgentBench or other agent benchmark environments",
+    "claims about real single-agent or multi-agent systems"
+  ],
+  "references": [
+    {
+      "authors": [
+        "Shunyu Yao et al."
+      ],
+      "claim_summary": "The paper evaluates an LLM pattern that interleaves reasoning traces and environment actions.",
+      "reference_id": "react-2022",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "year": 2022
+    },
+    {
+      "authors": [
+        "Sayash Kapoor et al."
+      ],
+      "claim_summary": "The paper argues that agent evaluation should account for cost, holdouts, standardization, and reproducibility alongside accuracy.",
+      "reference_id": "agents-that-matter-2024",
+      "title": "AI Agents That Matter",
+      "url": "https://arxiv.org/abs/2407.01502",
+      "year": 2024
+    }
+  ],
+  "reproduced_mechanics": [
+    "fixed task holdout",
+    "accuracy, unsafe-action, refusal, step, and cost recording",
+    "proposal validation against an allowlist",
+    "prompt-injection failure fixtures"
+  ],
+  "rerun_command": "paper-repro run --study workflow-agent --output research/results/v0.1",
+  "schema_version": "0.1.0",
+  "seed": 42,
+  "study_id": "workflow-agent",
+  "synthetic": true,
+  "title": "Deterministic workflow and constrained agent-proxy evaluation"
+}

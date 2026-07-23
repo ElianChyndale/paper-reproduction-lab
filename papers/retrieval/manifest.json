@@ -1,0 +1,63 @@
+{
+  "dataset_id": "synthetic-retrieval-v0-1",
+  "evidence_labels": [
+    "method-behavior-reproduction",
+    "scoped-claim-check",
+    "not-reproduced"
+  ],
+  "local_hypothesis": "The four declared methods produce deterministic rankings and RRF combines sparse and latent-semantic evidence on the synthetic corpus.",
+  "methods": [
+    "bm25",
+    "lsa",
+    "rrf-hybrid",
+    "feature-reranker"
+  ],
+  "metrics": [
+    "recall-at-5",
+    "mrr",
+    "ndcg-at-5"
+  ],
+  "not_reproduced": [
+    "DPR model training or neural embeddings",
+    "neural cross-encoder reranking",
+    "Natural Questions, TriviaQA, WebQuestions, CuratedTREC, TREC, or LETOR",
+    "original paper values and statistical significance"
+  ],
+  "references": [
+    {
+      "authors": [
+        "Vladimir Karpukhin et al."
+      ],
+      "claim_summary": "The paper evaluates learned dual-encoder dense passage retrieval against strong sparse retrieval on open-domain QA datasets.",
+      "reference_id": "dpr-2020",
+      "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+      "url": "https://arxiv.org/abs/2004.04906",
+      "year": 2020
+    },
+    {
+      "authors": [
+        "Gordon V. Cormack",
+        "Charles L. A. Clarke",
+        "Stefan Buettcher"
+      ],
+      "claim_summary": "The paper reports effective rank combination with reciprocal rank fusion in its retrieval experiments.",
+      "reference_id": "rrf-2009",
+      "title": "Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods",
+      "url": "https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf",
+      "year": 2009
+    }
+  ],
+  "reproduced_mechanics": [
+    "BM25 scoring",
+    "TF-IDF plus TruncatedSVD latent-semantic ranking",
+    "RRF with constant 60",
+    "bounded feature reranking",
+    "Recall@5, MRR, and binary nDCG@5"
+  ],
+  "rerun_command": "paper-repro run --study retrieval --output research/results/v0.1",
+  "schema_version": "0.1.0",
+  "seed": 42,
+  "study_id": "retrieval",
+  "synthetic": true,
+  "title": "Sparse, latent-semantic, fusion, and reranking behavior"
+}
