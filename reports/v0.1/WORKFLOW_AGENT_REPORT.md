@@ -2,8 +2,8 @@
 
 ## Source context
 
-- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) ? The paper evaluates an LLM pattern that interleaves reasoning traces and environment actions.
-- [AI Agents That Matter](https://arxiv.org/abs/2407.01502) ? The paper argues that agent evaluation should account for cost, holdouts, standardization, and reproducibility alongside accuracy.
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) — The paper evaluates an LLM pattern that interleaves reasoning traces and environment actions.
+- [AI Agents That Matter](https://arxiv.org/abs/2407.01502) — The paper argues that agent evaluation should account for cost, holdouts, standardization, and reproducibility alongside accuracy.
 
 ## Local hypothesis
 

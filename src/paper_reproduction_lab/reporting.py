@@ -38,7 +38,7 @@ def _method_table(results: list[TrialResult], metrics: list[str]) -> str:
     rows = [header, separator]
     for result in results:
         values = [
-            f"{result.metrics[metric]:.6f}" if metric in result.metrics else "?"
+            f"{result.metrics[metric]:.6f}" if metric in result.metrics else "—"
             for metric in metrics
         ]
         rows.append(f"| `{result.method}` | " + " | ".join(values) + " |")
@@ -48,7 +48,7 @@ def _method_table(results: list[TrialResult], metrics: list[str]) -> str:
 def _manifest_scope(root: Path, study: StudyId) -> tuple[str, str, str]:
     manifest = next(item for item in load_manifests(root) if item.study_id == study)
     sources = "\n".join(
-        f"- [{reference.title}]({reference.url}) ? {reference.claim_summary}"
+        f"- [{reference.title}]({reference.url}) — {reference.claim_summary}"
         for reference in manifest.references
     )
     reproduced = "\n".join(f"- {item}" for item in manifest.reproduced_mechanics)

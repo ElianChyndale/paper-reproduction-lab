@@ -2,8 +2,8 @@
 
 ## Source context
 
-- [On Calibration of Modern Neural Networks](https://proceedings.mlr.press/v70/guo17a.html) ? The paper reports temperature scaling as a simple effective post-hoc calibration method in many studied settings.
-- [Selective Classification for Deep Neural Networks](https://arxiv.org/abs/1705.08500) ? The paper studies rejecting uncertain predictions to trade coverage for risk.
+- [On Calibration of Modern Neural Networks](https://proceedings.mlr.press/v70/guo17a.html) — The paper reports temperature scaling as a simple effective post-hoc calibration method in many studied settings.
+- [Selective Classification for Deep Neural Networks](https://arxiv.org/abs/1705.08500) — The paper studies rejecting uncertain predictions to trade coverage for risk.
 
 ## Local hypothesis
 

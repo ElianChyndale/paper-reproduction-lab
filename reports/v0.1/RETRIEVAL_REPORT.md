@@ -2,8 +2,8 @@
 
 ## Source context
 
-- [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/abs/2004.04906) ? The paper evaluates learned dual-encoder dense passage retrieval against strong sparse retrieval on open-domain QA datasets.
-- [Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf) ? The paper reports effective rank combination with reciprocal rank fusion in its retrieval experiments.
+- [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/abs/2004.04906) — The paper evaluates learned dual-encoder dense passage retrieval against strong sparse retrieval on open-domain QA datasets.
+- [Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf) — The paper reports effective rank combination with reciprocal rank fusion in its retrieval experiments.
 
 ## Local hypothesis
 

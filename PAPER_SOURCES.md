@@ -16,7 +16,7 @@
 
 ### Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods
 
-- Authors: Gordon V. Cormack, Charles L. A. Clarke, Stefan B?ttcher.
+- Authors: Gordon V. Cormack, Charles L. A. Clarke, Stefan Büttcher.
 - Year: 2009.
 - Source: https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf
 - Source claim used for context: reciprocal-rank fusion combined multiple

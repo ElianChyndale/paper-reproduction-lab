@@ -59,17 +59,17 @@ Subset runs are useful for development but do not satisfy the release gate.
 
 ```text
 paper-reproduction-lab/
-??? templates/
-??? papers/
-?   ??? retrieval/
-?   ??? calibration/
-?   ??? workflow-agent/
-??? datasets/
-??? schemas/
-??? src/paper_reproduction_lab/
-??? tests/
-??? research/results/v0.1/
-??? reports/v0.1/
+├── templates/
+├── papers/
+│   ├── retrieval/
+│   ├── calibration/
+│   └── workflow-agent/
+├── datasets/
+├── schemas/
+├── src/paper_reproduction_lab/
+├── tests/
+├── research/results/v0.1/
+└── reports/v0.1/
 ```
 
 ## Current synthetic observations
