@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Check generated schemas
+        run: python scripts/generate_schemas.py --check
+      - name: Check generated fixtures
+        run: python scripts/generate_fixtures.py --check
+      - name: Test
+        run: python -m pytest
+      - name: Lint
+        run: python -m ruff check src tests scripts
+      - name: Type-check
+        run: python -m mypy src/paper_reproduction_lab
+      - name: Validate repository
+        run: paper-repro validate
+      - name: Run all studies
+        run: paper-repro run --study all --output research/results/v0.1
+      - name: Generate reports
+        run: paper-repro report --results research/results/v0.1 --output reports/v0.1
+      - name: Audit release
+        run: paper-repro audit
+      - name: Parse machine artifacts
+        run: python scripts/check_artifacts.py
+      - name: Build and audit wheel
+        shell: bash
+        run: |
+          python -m build --wheel
+          python scripts/check_wheel.py dist/*.whl
+      - name: Require deterministic tracked outputs
+        run: git diff --exit-code
