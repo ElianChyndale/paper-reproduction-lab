@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import math
 from collections.abc import Iterable, Mapping, Sequence
 from pathlib import Path
 from typing import Any, TypeVar
@@ -18,8 +19,26 @@ class DataError(ValueError):
     """Raised for malformed or missing study artifacts."""
 
 
+def stable_numbers(value: object) -> object:
+    """Round finite floats for byte-stable artifacts across numerical runtimes."""
+    if isinstance(value, float):
+        if not math.isfinite(value):
+            raise ValueError("machine artifacts require finite floats")
+        return float(f"{value:.12g}")
+    if isinstance(value, Mapping):
+        return {str(key): stable_numbers(item) for key, item in value.items()}
+    if isinstance(value, tuple | list):
+        return [stable_numbers(item) for item in value]
+    return value
+
+
 def canonical_json(value: object) -> str:
-    return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    return json.dumps(
+        stable_numbers(value),
+        sort_keys=True,
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
 
 
 def content_hash(value: object) -> str:
@@ -54,7 +73,13 @@ def read_jsonl(path: Path, model: type[T]) -> list[T]:
 def write_json(path: Path, value: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
-        json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
+        json.dumps(
+            stable_numbers(value),
+            indent=2,
+            sort_keys=True,
+            ensure_ascii=False,
+        )
+        + "\n",
         encoding="utf-8",
     )
 
@@ -78,4 +103,9 @@ def write_csv(
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(
+            [
+                {key: stable_numbers(value) for key, value in row.items()}
+                for row in rows
+            ]
+        )

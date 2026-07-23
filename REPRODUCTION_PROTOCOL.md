@@ -27,6 +27,10 @@ Every record has:
 - explicit split where applicable;
 - no wall-clock timestamp or local path.
 
+Machine-readable outputs serialize finite floats to 12 significant digits.
+This removes last-bit variation between supported numerical runtimes without
+changing the six-decimal values presented in Markdown reports.
+
 ## 3. Separate fitting from evaluation
 
 - Retrieval uses no relevance labels for fitting.

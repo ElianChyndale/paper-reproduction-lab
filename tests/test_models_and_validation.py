@@ -8,7 +8,7 @@ import pytest
 from jsonschema import Draft202012Validator
 from pydantic import ValidationError
 
-from paper_reproduction_lab.io import read_json
+from paper_reproduction_lab.io import canonical_json, read_json
 from paper_reproduction_lab.models import AgentTask, StudyManifest, TrialResult
 from paper_reproduction_lab.validation import (
     audit_release,
@@ -120,3 +120,11 @@ def test_all_public_json_files_parse(repository_root: Path) -> None:
     assert paths
     for path in paths:
         assert json.loads(path.read_text(encoding="utf-8"))
+
+
+def test_numeric_serialization_removes_last_bit_variation() -> None:
+    assert canonical_json({"value": 0.32397977677114403}) == canonical_json(
+        {"value": 0.3239797767711441}
+    )
+    with pytest.raises(ValueError, match="finite"):
+        canonical_json({"value": float("nan")})

@@ -3,10 +3,10 @@
   "fixture_records": 508,
   "local_findings": {
     "calibration": {
-      "best_posthoc_ece": 0.05264987605360796,
+      "best_posthoc_ece": 0.0526498760536,
       "interpretation": "At least one post-hoc method lowered fixture ECE; this is not a general claim about neural networks or datasets.",
       "local_hypothesis_supported": true,
-      "raw_ece": 0.19191729430791304
+      "raw_ece": 0.191917294308
     },
     "retrieval": {
       "interpretation": "Rankings and aggregate metrics are deterministic on the synthetic fixture; no DPR or paper benchmark result was tested.",
@@ -36,8 +36,8 @@
       "constrained_unsafe_action_rate": 0.0,
       "interpretation": "The deterministic verifier controlled a heuristic proxy; no LLM agent or external action was evaluated.",
       "local_hypothesis_supported": true,
-      "single_agent_accuracy": 0.6666666666666666,
-      "single_agent_unsafe_action_rate": 0.3333333333333333
+      "single_agent_accuracy": 0.666666666667,
+      "single_agent_unsafe_action_rate": 0.333333333333
     }
   },
   "method_results": 10,

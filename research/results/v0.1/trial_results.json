@@ -3,10 +3,10 @@
     "api_cost_usd": 0.0,
     "method": "bm25",
     "metrics": {
-      "mrr": 0.9444444444444444,
-      "ndcg-at-5": 0.7848805625421942,
+      "mrr": 0.944444444444,
+      "ndcg-at-5": 0.784880562542,
       "queries": 18.0,
-      "recall-at-5": 0.7962962962962963
+      "recall-at-5": 0.796296296296
     },
     "result_id": "retrieval-bm25",
     "schema_version": "0.1.0",
@@ -19,10 +19,10 @@
     "api_cost_usd": 0.0,
     "method": "lsa",
     "metrics": {
-      "mrr": 0.9722222222222222,
-      "ndcg-at-5": 0.969171760388466,
+      "mrr": 0.972222222222,
+      "ndcg-at-5": 0.969171760388,
       "queries": 18.0,
-      "recall-at-5": 0.9814814814814814
+      "recall-at-5": 0.981481481481
     },
     "result_id": "retrieval-lsa",
     "schema_version": "0.1.0",
@@ -35,10 +35,10 @@
     "api_cost_usd": 0.0,
     "method": "rrf-hybrid",
     "metrics": {
-      "mrr": 0.9722222222222222,
-      "ndcg-at-5": 0.8521279138744723,
+      "mrr": 0.972222222222,
+      "ndcg-at-5": 0.852127913874,
       "queries": 18.0,
-      "recall-at-5": 0.8703703703703703
+      "recall-at-5": 0.87037037037
     },
     "result_id": "retrieval-rrf-hybrid",
     "schema_version": "0.1.0",
@@ -51,10 +51,10 @@
     "api_cost_usd": 0.0,
     "method": "feature-reranker",
     "metrics": {
-      "mrr": 0.9722222222222222,
-      "ndcg-at-5": 0.9420799534460396,
+      "mrr": 0.972222222222,
+      "ndcg-at-5": 0.942079953446,
       "queries": 18.0,
-      "recall-at-5": 0.9629629629629629
+      "recall-at-5": 0.962962962963
     },
     "result_id": "retrieval-feature-reranker",
     "schema_version": "0.1.0",
@@ -68,14 +68,14 @@
     "method": "raw-confidence",
     "metrics": {
       "accuracy": 0.67,
-      "aurc": 0.1672961800485497,
-      "brier-score": 0.2200597449929458,
-      "ece-10": 0.19191729430791304,
+      "aurc": 0.167296180049,
+      "brier-score": 0.220059744993,
+      "ece-10": 0.191917294308,
       "examples": 200.0,
-      "negative-log-likelihood": 0.7078436671869871,
-      "risk-at-100-coverage": 0.32999999999999996,
-      "risk-at-25-coverage": 0.07999999999999996,
-      "risk-at-50-coverage": 0.18999999999999995,
+      "negative-log-likelihood": 0.707843667187,
+      "risk-at-100-coverage": 0.33,
+      "risk-at-25-coverage": 0.08,
+      "risk-at-50-coverage": 0.19,
       "risk-at-75-coverage": 0.24
     },
     "result_id": "calibration-raw-confidence",
@@ -90,15 +90,15 @@
     "method": "temperature-scaling",
     "metrics": {
       "accuracy": 0.67,
-      "aurc": 0.1672961800485497,
-      "brier-score": 0.19130096112345576,
-      "ece-10": 0.11184983331574778,
+      "aurc": 0.167296180049,
+      "brier-score": 0.191300961123,
+      "ece-10": 0.111849833316,
       "examples": 200.0,
-      "fitted-temperature": 2.829883989663128,
-      "negative-log-likelihood": 0.5584299566141148,
-      "risk-at-100-coverage": 0.32999999999999996,
-      "risk-at-25-coverage": 0.07999999999999996,
-      "risk-at-50-coverage": 0.18999999999999995,
+      "fitted-temperature": 2.82988398966,
+      "negative-log-likelihood": 0.558429956614,
+      "risk-at-100-coverage": 0.33,
+      "risk-at-25-coverage": 0.08,
+      "risk-at-50-coverage": 0.19,
       "risk-at-75-coverage": 0.24
     },
     "result_id": "calibration-temperature-scaling",
@@ -113,17 +113,17 @@
     "method": "platt-scaling",
     "metrics": {
       "accuracy": 0.7,
-      "aurc": 0.17113560091354493,
-      "brier-score": 0.19167546143396827,
-      "ece-10": 0.05264987605360796,
+      "aurc": 0.171135600914,
+      "brier-score": 0.191675461434,
+      "ece-10": 0.0526498760536,
       "examples": 200.0,
-      "fitted-intercept": -0.22423820512549866,
-      "fitted-slope": 0.35031296806427736,
-      "negative-log-likelihood": 0.5608965761825456,
-      "risk-at-100-coverage": 0.30000000000000004,
-      "risk-at-25-coverage": 0.09999999999999998,
-      "risk-at-50-coverage": 0.18000000000000005,
-      "risk-at-75-coverage": 0.23333333333333328
+      "fitted-intercept": -0.224238205125,
+      "fitted-slope": 0.350312968064,
+      "negative-log-likelihood": 0.560896576183,
+      "risk-at-100-coverage": 0.3,
+      "risk-at-25-coverage": 0.1,
+      "risk-at-50-coverage": 0.18,
+      "risk-at-75-coverage": 0.233333333333
     },
     "result_id": "calibration-platt-scaling",
     "schema_version": "0.1.0",
@@ -157,9 +157,9 @@
       "api-cost-usd": 0.0,
       "mean-steps": 2.0,
       "refusal-rate": 0.0,
-      "task-accuracy": 0.6666666666666666,
+      "task-accuracy": 0.666666666667,
       "tasks": 36.0,
-      "unsafe-action-rate": 0.3333333333333333
+      "unsafe-action-rate": 0.333333333333
     },
     "result_id": "workflow-agent-heuristic-single-agent",
     "schema_version": "0.1.0",
@@ -173,8 +173,8 @@
     "method": "constrained-multi-agent",
     "metrics": {
       "api-cost-usd": 0.0,
-      "mean-steps": 2.3333333333333335,
-      "refusal-rate": 0.3333333333333333,
+      "mean-steps": 2.33333333333,
+      "refusal-rate": 0.333333333333,
       "task-accuracy": 1.0,
       "tasks": 36.0,
       "unsafe-action-rate": 0.0

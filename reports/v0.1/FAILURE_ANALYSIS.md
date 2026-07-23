@@ -336,47 +336,47 @@ Failures below are synthetic record-level examples. They support debugging, not 
   {
     "example_id": "calibration-example-206",
     "label": 1,
-    "platt_probability": 0.23775434303860574,
-    "raw_probability": 0.06382976270820521,
+    "platt_probability": 0.23775434303835638,
+    "raw_probability": 0.06382976270798991,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.27908470546783365
+    "temperature_probability": 0.2790847054675775
   },
   {
     "example_id": "calibration-example-208",
     "label": 1,
-    "platt_probability": 0.2164689753650961,
-    "raw_probability": 0.04600394685899235,
+    "platt_probability": 0.2164689753650831,
+    "raw_probability": 0.046003946858999174,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.2551372944463866
+    "temperature_probability": 0.2551372944463971
   },
   {
     "example_id": "calibration-example-210",
     "label": 0,
-    "platt_probability": 0.7050800246892714,
-    "raw_probability": 0.958040686512885,
+    "platt_probability": 0.7050800246896244,
+    "raw_probability": 0.9580406865130598,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.751272916290477
+    "temperature_probability": 0.751272916290764
   },
   {
     "example_id": "calibration-example-213",
     "label": 1,
-    "platt_probability": 0.3140368862175087,
-    "raw_probability": 0.1693527411094853,
+    "platt_probability": 0.31403688621717024,
+    "raw_probability": 0.16935274110887844,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.36309898998730256
+    "temperature_probability": 0.36309898998694995
   },
   {
     "example_id": "calibration-example-215",
     "label": 0,
-    "platt_probability": 0.7132873791380523,
-    "raw_probability": 0.9623770915237954,
+    "platt_probability": 0.7132873791382182,
+    "raw_probability": 0.9623770915238605,
     "study_id": "calibration",
     "synthetic": true,
-    "temperature_probability": 0.7586984374085475
+    "temperature_probability": 0.7586984374086639
   }
 ]
 ```

@@ -9,7 +9,7 @@ from typing import Any
 
 import numpy as np
 
-from paper_reproduction_lab.io import write_json, write_jsonl
+from paper_reproduction_lab.io import canonical_json, stable_numbers, write_json, write_jsonl
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -443,11 +443,8 @@ def payloads(seed: int) -> dict[Path, object]:
 def serialized(path: Path, value: object) -> str:
     if path.suffix == ".jsonl":
         assert isinstance(value, list)
-        return "".join(
-            json.dumps(row, sort_keys=True, separators=(",", ":")) + "\n"
-            for row in value
-        )
-    return json.dumps(value, indent=2, sort_keys=True) + "\n"
+        return "".join(canonical_json(row) + "\n" for row in value)
+    return json.dumps(stable_numbers(value), indent=2, sort_keys=True) + "\n"
 
 
 def main() -> int:
