@@ -31,6 +31,16 @@ def test_runner_writes_all_machine_artifacts(
     assert sum(len(rows) for rows in predictions.values()) == 380
     assert len(load_results(output)) == 10
     assert count_csv_rows(output / "trial_metrics.csv") > 0
+    canonical = (
+        (repository_root / "datasets/retrieval/documents.jsonl")
+        .read_text(encoding="utf-8")
+        .replace("\r\n", "\n")
+        .replace("\r", "\n")
+        .encode("utf-8")
+    )
+    assert manifest.dataset_hashes["retrieval-documents"] == hashlib.sha256(
+        canonical
+    ).hexdigest()
     for path in output.iterdir():
         assert path.stat().st_size > 0
 

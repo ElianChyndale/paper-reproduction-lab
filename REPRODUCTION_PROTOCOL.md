@@ -30,6 +30,8 @@ Every record has:
 Machine-readable outputs serialize finite floats to 12 significant digits.
 This removes last-bit variation between supported numerical runtimes without
 changing the six-decimal values presented in Markdown reports.
+Dataset hashes use UTF-8 text with LF line endings, independent of the checkout
+platform's working-tree convention.
 
 ## 3. Separate fitting from evaluation
 
